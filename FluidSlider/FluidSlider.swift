@@ -11,6 +11,11 @@ import UIKit
 public class FluidSlider: UIView {
     public let lowerBoundLabel = UILabel()
     public let upperBoundLabel = UILabel()
+    internal var knob: FluidSliderKnob!
+    public var panGestureRecognizer = UIPanGestureRecognizer()
+    private var knobCenterXConstraint: NSLayoutConstraint!
+    private var knobCenterYConstraint: NSLayoutConstraint!
+    private var lastPosition: CGFloat!
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,12 +26,23 @@ public class FluidSlider: UIView {
         super.init(frame: frame)
         setup()
     }
+    
+    @objc func didPan(_ sender: UIPanGestureRecognizer) {
+        let position = sender.location(in: nil).x
+        if case .changed = sender.state {
+            let delta = position - lastPosition
+            knobCenterXConstraint.constant += delta
+        }
+        lastPosition = position
+    }
 }
 
 private extension FluidSlider {
     func setup() {
         setupLowerBound()
         setupUpperBound()
+        setupKnob()
+        setupGestureRecognizer()
     }
     
     func setupLowerBound() {
@@ -51,5 +67,25 @@ private extension FluidSlider {
         trailing.isActive = true
         let verticalCenter = NSLayoutConstraint(item: upperBoundLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         verticalCenter.isActive = true
+    }
+    
+    func setupKnob() {
+        let height = bounds.height
+        knob = FluidSliderKnob(frame: CGRect(x: 0, y: 0, width: height, height: height))
+        addSubview(knob)
+        knobCenterXConstraint =
+            NSLayoutConstraint(item: knob, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
+        knobCenterYConstraint =
+            NSLayoutConstraint(item: knob, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: knob, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0),
+            knobCenterXConstraint,
+            knobCenterYConstraint
+        ])
+    }
+    
+    func setupGestureRecognizer() {
+        addGestureRecognizer(panGestureRecognizer)
+        panGestureRecognizer.addTarget(self, action: #selector(didPan(_:)))
     }
 }

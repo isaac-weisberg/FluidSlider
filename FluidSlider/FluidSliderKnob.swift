@@ -8,21 +8,21 @@
 
 import UIKit
 
-class FluidSliderKnob: UIView {
+public class FluidSliderKnob: UIView {
     let label = UILabel()
     let circleLayer = CAShapeLayer()
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    override var bounds: CGRect {
+    override public var bounds: CGRect {
         get {
             return super.bounds
         }
@@ -35,6 +35,7 @@ class FluidSliderKnob: UIView {
 
 private extension FluidSliderKnob {
     func setup() {
+        translatesAutoresizingMaskIntoConstraints = false
         setupSelf()
         setupLayers()
         setupLabel()
@@ -69,5 +70,6 @@ private extension FluidSliderKnob {
         let radius = bounds.width
         let path = UIBezierPath(roundedRect: bounds, cornerRadius: radius)
         circleLayer.path = path.cgPath
+        circleLayer.fillColor = UIColor.blue.cgColor
     }
 }
