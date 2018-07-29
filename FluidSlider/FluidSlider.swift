@@ -32,11 +32,19 @@ public class FluidSlider: UIView {
         if case .began = sender.state {
             panInKnob = knob.bounds.contains(sender.location(in: knob))
             if panInKnob {
-                knobCenterYConstraint = knobCenterYConstraint.withMultiplier(-1)
+                layoutIfNeeded()
+                UIView.animate(withDuration: 0.2) {[weak self] in
+                    self?.knobCenterYConstraint = self?.knobCenterYConstraint.withMultiplier(-1)
+                    self?.layoutIfNeeded()
+                }
             }
         }
         if case .ended = sender.state {
-            knobCenterYConstraint = knobCenterYConstraint.withMultiplier(1)
+            layoutIfNeeded()
+            UIView.animate(withDuration: 0.2) {[weak self] in
+                self?.knobCenterYConstraint = self?.knobCenterYConstraint.withMultiplier(1)
+                self?.layoutIfNeeded()
+            }
         }
         
         guard panInKnob else {
