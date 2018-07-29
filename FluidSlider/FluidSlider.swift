@@ -30,7 +30,9 @@ private extension FluidSlider {
     }
     
     func setupLowerBound() {
-        lowerBoundLabel.text = "DEBUG"
+        #if DEBUG
+            lowerBoundLabel.text = "DEBUG"
+        #endif
         lowerBoundLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(lowerBoundLabel)
         let leading = NSLayoutConstraint(item: lowerBoundLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 8)
@@ -40,7 +42,9 @@ private extension FluidSlider {
     }
     
     func setupUpperBound() {
-        upperBoundLabel.text = "DEBUG"
+        #if DEBUG
+            upperBoundLabel.text = "DEBUG"
+        #endif
         upperBoundLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(upperBoundLabel)
         let trailing = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: upperBoundLabel, attribute: .trailing, multiplier: 1, constant: 8)

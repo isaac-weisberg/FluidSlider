@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C20A896210D811700F41C83 /* FluidSliderKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A895210D811700F41C83 /* FluidSliderKnob.swift */; };
+		5C20A897210D882B00F41C83 /* FluidSliderKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A895210D811700F41C83 /* FluidSliderKnob.swift */; };
 		5C5574DF210CC449003FB1E4 /* FluidSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5574DE210CC449003FB1E4 /* FluidSlider.swift */; };
 		5C5574E7210CC576003FB1E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5574E6210CC576003FB1E4 /* AppDelegate.swift */; };
 		5C5574E9210CC576003FB1E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5574E8210CC576003FB1E4 /* ViewController.swift */; };
@@ -17,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C20A895210D811700F41C83 /* FluidSliderKnob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidSliderKnob.swift; sourceTree = "<group>"; };
 		5C5574D3210CC3C4003FB1E4 /* FluidSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FluidSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5574D7210CC3C4003FB1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C5574DE210CC449003FB1E4 /* FluidSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidSlider.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			children = (
 				5C5574D7210CC3C4003FB1E4 /* Info.plist */,
 				5C5574DE210CC449003FB1E4 /* FluidSlider.swift */,
+				5C20A895210D811700F41C83 /* FluidSliderKnob.swift */,
 			);
 			path = FluidSlider;
 			sourceTree = "<group>";
@@ -207,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5574DF210CC449003FB1E4 /* FluidSlider.swift in Sources */,
+				5C20A896210D811700F41C83 /* FluidSliderKnob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9EFC63210CD05800ED7FD2 /* FluidSlider.swift in Sources */,
+				5C20A897210D882B00F41C83 /* FluidSliderKnob.swift in Sources */,
 				5C5574E9210CC576003FB1E4 /* ViewController.swift in Sources */,
 				5C5574E7210CC576003FB1E4 /* AppDelegate.swift in Sources */,
 			);

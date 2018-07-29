@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,10 +26,22 @@
                                     <constraint firstAttribute="height" constant="128" id="z1B-SV-LYp"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-mk-pKD" customClass="FluidSliderKnob" customModule="FluidSliderExampleApp" customModuleProvider="target">
+                                <rect key="frame" x="140" y="482" width="94" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.6930803571428571" green="0.67460937499999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.89377790178571426" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="DeW-mk-pKD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.5" id="13w-Pt-dWY"/>
                             <constraint firstItem="o52-Jo-EjO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="5Fl-PX-13R"/>
+                            <constraint firstItem="DeW-mk-pKD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="H3A-MN-BZS"/>
+                            <constraint firstItem="DeW-mk-pKD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="WRY-nN-PFl"/>
                             <constraint firstItem="o52-Jo-EjO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="apz-JE-W8H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o52-Jo-EjO" secondAttribute="trailing" constant="8" id="v9K-SP-DDC"/>
                         </constraints>
