@@ -15,6 +15,7 @@ public class FluidSlider: UIView {
     public var panGestureRecognizer = UIPanGestureRecognizer()
     private var knobCenterXConstraint: NSLayoutConstraint!
     private var knobCenterYConstraint: NSLayoutConstraint!
+    private var panInKnob = false
     private var lastPosition: CGFloat!
     
     required public init?(coder aDecoder: NSCoder) {
@@ -28,10 +29,21 @@ public class FluidSlider: UIView {
     }
     
     @objc func didPan(_ sender: UIPanGestureRecognizer) {
+        if case .began = sender.state {
+            panInKnob = knob.bounds.contains(sender.location(in: knob))
+        }
+        guard panInKnob else {
+            return
+        }
+        
         let position = sender.location(in: nil).x
         if case .changed = sender.state {
             let delta = position - lastPosition
-            knobCenterXConstraint.constant += delta
+            let newConstraintValue = knobCenterXConstraint.constant + delta
+            let width = bounds.width * 0.5
+            let clampedValue = (-width...width).clamp(newConstraintValue)
+            knobCenterXConstraint.constant = clampedValue
+            
         }
         lastPosition = position
     }
@@ -75,12 +87,15 @@ private extension FluidSlider {
         addSubview(knob)
         knobCenterXConstraint =
             NSLayoutConstraint(item: knob, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
+        knobCenterXConstraint.priority = .defaultHigh
         knobCenterYConstraint =
             NSLayoutConstraint(item: knob, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: knob, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: knob, attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: self, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: knob, attribute: .trailing, multiplier: 1, constant: 0),
             knobCenterXConstraint,
-            knobCenterYConstraint
+            knobCenterYConstraint,
         ])
     }
     
