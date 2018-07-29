@@ -11,7 +11,7 @@ import UIKit
 public class FluidSlider: UIView {
     public let lowerBoundLabel = UILabel()
     public let upperBoundLabel = UILabel()
-    internal var knob: FluidSliderKnob!
+    public var knob: FluidSliderKnob!
     public var panGestureRecognizer = UIPanGestureRecognizer()
     private var knobCenterXConstraint: NSLayoutConstraint!
     private var knobCenterYConstraint: NSLayoutConstraint!
