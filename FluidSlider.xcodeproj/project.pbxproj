@@ -16,6 +16,8 @@
 		5C5574EE210CC579003FB1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C5574ED210CC579003FB1E4 /* Assets.xcassets */; };
 		5C5574F1210CC579003FB1E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5574EF210CC579003FB1E4 /* LaunchScreen.storyboard */; };
 		5C9EFC63210CD05800ED7FD2 /* FluidSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5574DE210CC449003FB1E4 /* FluidSlider.swift */; };
+		5CB4CF69210E015500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB4CF68210E015500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift */; };
+		5CB4CF6A210E024500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB4CF68210E015500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift */; };
 		5CCD7297210DEDA80064A638 /* ClosedInterval+clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD7296210DEDA80064A638 /* ClosedInterval+clamp.swift */; };
 		5CCD7298210DEE720064A638 /* ClosedInterval+clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD7296210DEDA80064A638 /* ClosedInterval+clamp.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,7 @@
 		5C5574ED210CC579003FB1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C5574F0210CC579003FB1E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C5574F2210CC579003FB1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CB4CF68210E015500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+withMultiplier.swift"; sourceTree = "<group>"; };
 		5CCD7296210DEDA80064A638 /* ClosedInterval+clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClosedInterval+clamp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +82,7 @@
 				5C5574DE210CC449003FB1E4 /* FluidSlider.swift */,
 				5C20A895210D811700F41C83 /* FluidSliderKnob.swift */,
 				5CCD7296210DEDA80064A638 /* ClosedInterval+clamp.swift */,
+				5CB4CF68210E015500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift */,
 			);
 			path = FluidSlider;
 			sourceTree = "<group>";
@@ -214,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB4CF69210E015500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift in Sources */,
 				5CCD7297210DEDA80064A638 /* ClosedInterval+clamp.swift in Sources */,
 				5C5574DF210CC449003FB1E4 /* FluidSlider.swift in Sources */,
 				5C20A896210D811700F41C83 /* FluidSliderKnob.swift in Sources */,
@@ -228,6 +233,7 @@
 				5CCD7298210DEE720064A638 /* ClosedInterval+clamp.swift in Sources */,
 				5C20A897210D882B00F41C83 /* FluidSliderKnob.swift in Sources */,
 				5C5574E9210CC576003FB1E4 /* ViewController.swift in Sources */,
+				5CB4CF6A210E024500BC4CB4 /* NSLayoutConstraint+withMultiplier.swift in Sources */,
 				5C5574E7210CC576003FB1E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

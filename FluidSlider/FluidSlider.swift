@@ -31,7 +31,14 @@ public class FluidSlider: UIView {
     @objc func didPan(_ sender: UIPanGestureRecognizer) {
         if case .began = sender.state {
             panInKnob = knob.bounds.contains(sender.location(in: knob))
+            if panInKnob {
+                knobCenterYConstraint = knobCenterYConstraint.withMultiplier(-1)
+            }
         }
+        if case .ended = sender.state {
+            knobCenterYConstraint = knobCenterYConstraint.withMultiplier(1)
+        }
+        
         guard panInKnob else {
             return
         }

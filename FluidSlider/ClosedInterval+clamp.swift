@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Immature copy-paste
 extension ClosedRange {
     func clamp(_ value : Bound) -> Bound {
         return self.lowerBound > value ? self.lowerBound
